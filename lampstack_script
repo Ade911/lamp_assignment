@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#update the os
+sudo apt-get update -y
+
+#install apache
+sudo apt-get install apache2 -y
+
+#start the apache service
+sudo  systemctl start apache2
+
+#enable the apache service
+sudo systemctl enable apache2
+
+# install mysql server
+sudo apt-get install mysql-server -y
+
+# install php and it extensions
+
+sudo apt-get install php php-cli php-mysql php-curl php-zip libapache2-mod-php php-fpm php-mbstring php-gd -y
+
+# change the ownership of the default document root of the apache web server
+sudo chown -R ubuntu:www-data /var/ww/html
+
+# to change the permission set of the default document root apache web server
+sudo chmod 775 /var/www/html
+
+# create a sample php file in the document root folder
+echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+
+# restart the apache service
+sudo systemctl restart apache2....
