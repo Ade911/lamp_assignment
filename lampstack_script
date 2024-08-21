@@ -29,4 +29,4 @@ sudo chmod 775 /var/www/html
 echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 
 # restart the apache service
-sudo systemctl restart apache2....
+sudo systemctl restart apache2
